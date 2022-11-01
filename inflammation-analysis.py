@@ -7,9 +7,8 @@ from inflammation import models, views
 
 
 def main(args):
-    """The MVC Controller of the patient inflammation data system.
+    """MVC Controller is responsible for:
 
-    The Controller is responsible for:
     - selecting the necessary models and views for the current task
     - passing data between models and views
     """
@@ -24,6 +23,7 @@ def main(args):
                      'max': models.daily_max(inflammation_data),
                      'min': models.daily_min(inflammation_data)}
         views.visualize(view_data)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
