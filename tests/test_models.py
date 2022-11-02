@@ -117,4 +117,8 @@ def test_daily_min_string():
 def test_patient_normalise(test, expected):
     '''Test normalisations works'''
     from inflammation.models import patient_normalise
-    npt.assert_almost_equal(patient_normalise(np.array(test)), np.array(expected), decimal=2)        
+    if expect_raises is not None:
+        with pytest.raises(expected_raises):
+            npt.assert_almost_equal(patient_normalise(np.array(test)), np.array(expected), decimal=2)
+    else:
+        npt.assert_almost_equal(patient_normalise(np.array(test)), np.array(expected), decimal=2)        
