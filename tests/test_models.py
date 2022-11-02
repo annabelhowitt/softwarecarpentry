@@ -56,7 +56,7 @@ def test_daily_min_integers():
     npt.assert_array_equal(daily_min(test_input), test_result)
 
     
- def test_daily_max_negative():
+def test_daily_max_negative():
     """Test that max function works for an array of negative integers."""
     from inflammation.models import daily_max
 
