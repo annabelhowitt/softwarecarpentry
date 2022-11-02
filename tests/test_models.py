@@ -13,7 +13,9 @@ import pytest
     ]
 
 )
-    
+def test_daily_mean(test, expected):
+    from inflammation.models import daily_mean
+    npt.assert_array_equal(daily_mean(test), expected)    
 
 
 
